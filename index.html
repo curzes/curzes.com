@@ -96,6 +96,18 @@
             }
         });
 
+        $.ajax({
+            url: "https://raw.githubusercontent.com/curzes/website/master/img.json",
+            type: "GET",
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+
     });
 </script>
 
