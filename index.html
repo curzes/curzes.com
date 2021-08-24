@@ -24,57 +24,29 @@
         <div class="grid">
             <div class="grid-sizer"></div>
             <div class="grid-item">
-                <div><img src="assets/img/50x140.jpg"></div>
+                <div><img src="assets/img/1000x1000.jpg"></div>
             </div>
             <div class="grid-item">
-                <div><img src="assets/img/70x100.jpg"></div>
+                <div><img src="assets/img/1000x1200.jpg"></div>
             </div>
             <div class="grid-item">
-                <div><img src="assets/img/85x90.jpg"></div>
+                <div><img src="assets/img/1000x1300.jpg"></div>
             </div>
             <div class="grid-item">
-                <div><img src="assets/img/90x85.jpg"></div>
+                <div><img src="assets/img/1200x1000.jpg"></div>
             </div>
             <div class="grid-item">
-                <div><img src="assets/img/90x100.jpg"></div>
+                <div><img src="assets/img/1400x1000.jpg"></div>
             </div>
             <div class="grid-item">
-                <div><img src="assets/img/90x150.jpg"></div>
-            </div>
-            <div class="grid-item">
-                <div><img src="assets/img/105x100.jpg"></div>
-            </div>
-            <div class="grid-item">
-                <div><img src="assets/img/115x75.jpg"></div>
-            </div>
-            <div class="grid-item">
-                <div><img src="assets/img/115x175.jpg"></div>
-            </div>
-            <div class="grid-item">
-                <div><img src="assets/img/119x90.jpg"></div>
-            </div>
-            <div class="grid-item">
-                <div><img src="assets/img/119x150.jpg"></div>
-            </div>
-            <div class="grid-item">
-                <div><img src="assets/img/120x100.jpg"></div>
-            </div>
-            <div class="grid-item">
-                <div><img src="assets/img/150x100.jpg"></div>
-            </div>
-            <div class="grid-item">
-                <div><img src="assets/img/150x105.jpg"></div>
-            </div>
-            <div class="grid-item">
-                <div><img src="assets/img/200x150.jpg"></div>
-            </div>
-            <div class="grid-item">
-                <div><img src="assets/img/728x90.jpg"></div>
+                <div><img src="assets/img/1500x1000.jpg"></div>
             </div>
         </div>
     </main>
     <div id="modal-bg"></div>
-    <div id="modal"></div>
+    <div id="modal">
+        <div class="modal-content"></div>
+    </div>
 </body>
 <script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
@@ -85,17 +57,17 @@
         columnWidth: '.grid-sizer',
         percentPosition: true
     });
-
     jQuery(document).ready(function ($) {
 
-        $('.grid-item div img, #modal-bg').on('click', function (e) {
+        $('.grid-item div img, #modal-bg, #modal').on('click', function (e) {
             $('#modal, #modal-bg').toggleClass('open');
             var src = $(this).attr('src');
             if (src) {
-                $('#modal').html('<img src="' + src + '">');
+                $('#modal .modal-content').html('<img src="' + src + '">');
             }
         });
 
+        /*
         $.ajax({
             url: "https://raw.githubusercontent.com/curzes/website/master/img.json",
             type: "GET",
@@ -107,6 +79,7 @@
                 console.log(errorThrown);
             }
         });
+        */
 
     });
 </script>
