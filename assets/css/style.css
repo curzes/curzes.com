@@ -18,26 +18,31 @@ main {
 	margin-top: 50px;
 }
 
-.grid-sizer,
+.grid {
+	display: flex;
+	flex-flow: column wrap;
+	width: 100%;
+	height: auto;
+}
+
 .grid-item {
-	width: 33.333333%;
+	box-sizing: border-box;
+	padding: 10px;
+	counter-increment: item-counter;
 }
 
 .grid-item > div {
-	padding: 5px;
-	background: rgba(255, 255, 255, 1);
-	border-radius: 3px;
-	margin: 0 10px;
-	margin-bottom: 20px;
-	cursor: pointer;
-	box-shadow: 0 9px 6px rgba(0, 0, 0, 0.3);
-	transition: scale 0.4s;
-	transition: box-shadow 0.4s;
-}
-
-.grid-item > div:active {
-	scale: 0.98;
-	box-shadow: 0 5px 6px rgba(0, 0, 0, 0.3);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 220px;
+	font-size: 40px;
+	color: darken($bg, 5%);
+	background: currentColor;
+	box-sizing: border-box;
 }
 
 img {
@@ -92,20 +97,3 @@ img {
 	max-height: 100%;
 }
 
-@media (max-width: 991.98px) {
-
-	.grid-sizer,
-	.grid-item {
-		width: 50%;
-	}
-}
-
-@media (max-width: 767.98px) {
-
-	.grid-sizer,
-	.grid-item {
-		width: 100%;
-	}
-}
-*/
-}
