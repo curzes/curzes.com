@@ -4,7 +4,7 @@ font-family: 'Source Sans Pro', sans-serif;
 font-family: 'Staatliches', cursive;
 */
 html {
-	background: rgb(177, 177, 177);
+	background: #fbfbfb;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
 
 main {
 	max-width: 1200px;
-	padding: 0 50px;
+	padding: 0 15px;
 	margin: auto;
 	margin-top: 50px;
 }
@@ -27,8 +27,11 @@ main {
 
 .grid-item {
 	box-sizing: border-box;
-	padding: 10px;
-	counter-increment: item-counter;
+	padding: 15px;
+	width: calc(33.333333% - 15px);
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.5);
+	margin-bottom: 15px;
+	background: #fff;
 }
 
 .grid-item > div {
@@ -38,7 +41,6 @@ main {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 220px;
 	font-size: 40px;
 	color: darken($bg, 5%);
 	background: currentColor;
@@ -48,52 +50,15 @@ main {
 img {
 	width: 100%;
 	display: block;
-}
-
-#modal-bg {
-	display: none;
-}
-
-#modal-bg.open {
-	background: rgba(0, 0, 0, 0.6);
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	display: block;
-}
-
-#modal {
-	width: 100%;
-	height: 100%;
-	background: transparent;
-	position: fixed;
-	margin: auto;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	top: 0;
-	opacity: 0;
-	display: none;
-	transition: opacity 0.5s;
-}
-
-#modal.open {
-	border-radius: 3px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-	opacity: 1;
-	transition: opacity 0.4s;
-	display: block;
-}
-
-#modal .modal-content {
-	width: 80%;
-	margin: 10% auto;
-}
-
-#modal.open img {
-	max-width: 100%;
 	max-height: 100%;
 }
-
+@media(max-width: 1000px){
+	.grid-item {
+		width: calc(50% - 15px);
+	}
+}
+@media(max-width: 600px){
+	.grid-item {
+		width: calc(100% - 10px);
+	}
+}
