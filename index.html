@@ -20,7 +20,6 @@
 <body>
     <main>
         <div class="grid">
-
             <div class="grid-item">
                 <div><img src="assets/img/IMG_20230728_152246.jpg"></div>
             </div>
@@ -90,6 +89,15 @@
             itemSelector: ".grid-item",
             percentPosition: true,
             gutter: 15,
+        });
+    });
+    jQuery(document).ready(function(){
+        jQuery(document).on('click', '.grid-item:not(.open)', function () {
+            jQuery('.grid-item').removeClass('open');
+            jQuery(this).addClass('open');
+        });
+        jQuery(document).on('click', '.grid-item.open', function () {
+            jQuery('.grid-item').removeClass('open');
         });
     });
 </script>
